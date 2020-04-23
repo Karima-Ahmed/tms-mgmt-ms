@@ -1,0 +1,122 @@
+
+/**
+* Employee (employee) entity.
+*/
+entity Employee (employee) {
+	fullNameEn String required
+    fullNameAr String required
+	userId Long
+	email String     required
+	mobileNo String  required
+    status Integer
+    langKey Language
+}
+
+/**
+* EmployeeType (employee_Type) entity.
+*/
+entity EmployeeType (employee_Type) {
+    nameEn String  required
+    nameAr String  required
+}
+
+/**
+* EmployeeVacation (employee_vacation) entity.
+*/
+entity EmployeeVacation (employee_vacation) {
+ 	dateFrom LocalDate   required
+    dateTo LocalDate     required
+    timeFrom Instant
+    timeTo Instant
+    status Integer
+    type Integer
+}
+
+/**
+* Department (department) entity.
+*/
+entity Department (department) {
+	nameEn String required
+    nameAr String required
+}
+
+/**
+* Center (center) entity.
+*/
+entity Center (center) {
+	nameEn String required
+    nameAr String required
+    address String 
+    longitude Double
+    latitude Double
+    startWorkingHour Instant
+    endWorkingHour Instant
+	phoneNo   String 
+	mobileNo  String 
+	email     String unique
+	country   String
+	city      String
+	imageUrl  String 
+	status Integer	
+}
+
+/**
+* WorkingDays (working_days) entity.
+*/
+entity WorkingDays (working_days) {
+nameEn String  required
+nameAr String  required
+status Boolean
+}
+
+/**
+* CenterWorkingDays (center_working_days) entity.
+*/
+entity CenterWorkingDays (center_working_days) {
+ startWorkingHour Instant
+ endWorkingHour   Instant
+}
+
+/**
+* PublicHoliday (public_holiday) entity.
+*/
+entity PublicHoliday (public_holiday) {
+	description String required
+    year Integer
+    type Integer
+    dateFrom LocalDate
+    dateTo LocalDate
+}
+
+enum Language {
+    ARABIC, ENGLISH
+}
+
+relationship ManyToOne {
+	Employee{department} to Department
+    Employee{center} to Center
+    Employee {employeeType} to EmployeeType
+}
+
+relationship OneToMany {
+	Employee{employeeVacations} to EmployeeVacation
+    CenterWorkingDays {workingDays} to WorkingDays
+}
+
+relationship OneToOne {
+Center {centerWorkingDays} to CenterWorkingDays
+}
+
+
+dto all with mapstruct
+
+service all with serviceImpl
+
+filter all
+
+paginate all with pagination
+
+clientRootFolder all with stuff-mgmt-ms
+
+
+
