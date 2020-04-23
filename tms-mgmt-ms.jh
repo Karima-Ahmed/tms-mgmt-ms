@@ -16,7 +16,7 @@ entity TrainingClass (tms_training_class) {
 * TrainingType (tms_training_type) entity.
 */
 entity TrainingType (tms_training_type) {
-	nameEn String
+	nameEn String,
     nameAr String
 }
 
@@ -28,15 +28,15 @@ entity Attendees (tms_attendees) {
 }
 
 relationship ManyToOne {
-TrainingClass {trainingType} to TrainingType
-Attendees {trainingClass} to TrainingClass
+    TrainingClass {trainingType} to TrainingType
+    Attendees {trainingClass} to TrainingClass
 }
 
 dto all with mapstruct
 
 service all with serviceImpl
 
-microservice all with tms-mgmt-ms
+microservice * with tms-mgmt-ms
 
 filter all
 
