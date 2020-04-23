@@ -27,11 +27,6 @@ entity Attendees (tms_attendees) {
     applicantId Long
 }
 
-relationship ManyToOne {
-TrainingClass {trainingType} to TrainingType
-Attendees {trainingClass} to TrainingClass
-}
-
 dto all with mapstruct
 
 service all with serviceImpl
