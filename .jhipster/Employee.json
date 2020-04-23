@@ -1,0 +1,88 @@
+{
+    "name": "Employee",
+    "fields": [
+        {
+            "fieldName": "fullNameEn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fullNameAr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "mobileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "langKey",
+            "fieldType": "Language",
+            "fieldValues": "ARABIC,ENGLISH"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "employeeVacation",
+            "otherEntityRelationshipName": "employee",
+            "relationshipName": "employeeVacations"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "employee",
+            "relationshipName": "department",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "center",
+            "otherEntityRelationshipName": "employee",
+            "relationshipName": "center",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "employeeType",
+            "otherEntityRelationshipName": "employee",
+            "relationshipName": "employeeType",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200423144900",
+    "javadoc": "Employee (employee) entity.",
+    "entityTableName": "employee",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "stuff-mgmt-ms",
+    "applications": "*",
+    "microserviceName": "TrainingManagementSystem"
+}

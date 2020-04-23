@@ -1,0 +1,33 @@
+{
+    "name": "EmployeeType",
+    "fields": [
+        {
+            "fieldName": "nameEn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nameAr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200423145000",
+    "javadoc": "EmployeeType (employee_Type) entity.",
+    "entityTableName": "employee_type",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "stuff-mgmt-ms",
+    "applications": "*",
+    "microserviceName": "TrainingManagementSystem"
+}

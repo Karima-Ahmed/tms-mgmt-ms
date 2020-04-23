@@ -1,0 +1,34 @@
+{
+    "name": "CenterWorkingDays",
+    "fields": [
+        {
+            "fieldName": "startWorkingHour",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endWorkingHour",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "workingDays",
+            "otherEntityRelationshipName": "centerWorkingDays",
+            "relationshipName": "workingDays"
+        }
+    ],
+    "changelogDate": "20200423145500",
+    "javadoc": "CenterWorkingDays (center_working_days) entity.",
+    "entityTableName": "center_working_days",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "stuff-mgmt-ms",
+    "applications": "*",
+    "microserviceName": "TrainingManagementSystem"
+}

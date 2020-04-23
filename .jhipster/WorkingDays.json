@@ -1,0 +1,45 @@
+{
+    "name": "WorkingDays",
+    "fields": [
+        {
+            "fieldName": "nameEn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nameAr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "centerWorkingDays",
+            "otherEntityRelationshipName": "workingDays",
+            "relationshipName": "centerWorkingDays",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200423145400",
+    "javadoc": "WorkingDays (working_days) entity.",
+    "entityTableName": "working_days",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "stuff-mgmt-ms",
+    "applications": "*",
+    "microserviceName": "TrainingManagementSystem"
+}

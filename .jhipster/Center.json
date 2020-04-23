@@ -1,0 +1,93 @@
+{
+    "name": "Center",
+    "fields": [
+        {
+            "fieldName": "nameEn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nameAr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitude",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "latitude",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "startWorkingHour",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endWorkingHour",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "phoneNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobileNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "centerWorkingDays",
+            "otherEntityRelationshipName": "center",
+            "relationshipName": "centerWorkingDays",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200423145300",
+    "javadoc": "Center (center) entity.",
+    "entityTableName": "center",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "stuff-mgmt-ms",
+    "applications": "*",
+    "microserviceName": "TrainingManagementSystem"
+}

@@ -1,0 +1,57 @@
+{
+    "name": "EmployeeVacation",
+    "fields": [
+        {
+            "fieldName": "dateFrom",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateTo",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "timeFrom",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "timeTo",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "employeeVacations",
+            "relationshipName": "employee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200423145100",
+    "javadoc": "EmployeeVacation (employee_vacation) entity.",
+    "entityTableName": "employee_vacation",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "stuff-mgmt-ms",
+    "applications": "*",
+    "microserviceName": "TrainingManagementSystem"
+}
